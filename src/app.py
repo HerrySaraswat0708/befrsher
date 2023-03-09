@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,url_for,session,request
+from flask import Flask,render_template,redirect,url_for,session,request,send_from_directory
 from werkzeug.utils import secure_filename
 import pyrebase
 import os
@@ -19,6 +19,8 @@ db = firebase.database()
 app = Flask(__name__)
 app.secret_key = 'saraswat'
 storage = firebase.storage()
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
